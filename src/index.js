@@ -8,7 +8,7 @@ import { Utils } from "./utils/index.mjs";
 import Data from "../_data/db.json" with { type: "json" };
 
 const settings = {
-  host: process.env.HOST_NAME || "127.0.0.1",
+  host: process.env.HOST_NAME || "0.0.0.0",
   port: process.env.PORT || 3000
 };
 

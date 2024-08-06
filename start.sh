@@ -57,4 +57,4 @@ do
 done
 
 infoln "Starting up application..."
-npm run dev
+pm2 start src/index.js
