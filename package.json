@@ -1,0 +1,11 @@
+{
+  "name": "fcj-dntu-node-example-01",
+  "module": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
