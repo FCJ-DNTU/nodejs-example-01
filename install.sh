@@ -38,5 +38,33 @@ infoln "GET - /albums"
 infoln "GET - /albums/:id"
 println
 
+# Check flag
+hostNameFlag="--hostname"
+portFlag="--port"
+argsNumber=2
+
+for arg in "$@"
+do
+  IFS='=' read -r -a parts <<< "$arg"
+
+  flag="${parts[0]}"
+  value="${parts[1]}"
+
+  case $flag in
+
+    $hostNameFlag)
+      export HOST_NAME="$value"
+      ;;
+
+    $portFlag)
+      export PORT="$value"
+      ;;
+
+    *)
+      println "The flag $flag isn't supported"
+      ;;
+  esac
+done
+
 infoln "Starting up application..."
 npm run dev
