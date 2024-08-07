@@ -15,6 +15,12 @@ const settings = {
 const app = express();
 const server = http.createServer(app);
 
+app.use((req, res, next) => {
+  let fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+  console.log("URL:", fullUrl);
+  next();
+});
+
 app.get("/", (req, res) => {
   return Utils.Error.handleResponseError(app, res, function(o) {
     o.data = "Welcome to my app";
